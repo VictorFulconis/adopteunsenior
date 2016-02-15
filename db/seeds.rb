@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+# Booking.create(user_id: '1', activity_id: '1', accepted: true)
+# Booking.create(user_id: '2', activity_id: '2', accepted: true)
+# Booking.create(user_id: '3', activity_id: '3', accepted: true)
