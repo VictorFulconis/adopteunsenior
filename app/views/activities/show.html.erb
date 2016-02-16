@@ -1,0 +1,48 @@
+<div class="page-wrapper">
+  <div class="page-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-2">
+          <div id="activity-info">
+            <ul>
+              <li><h3><%= @activity.name %></h3></li>
+              <li><p><%= @activity.starting_time %></p></li>
+              <li><p><%= @activity.end_time %></p></li>
+              <li><p><%= @activity.price %>€</p></li>
+              <li><p><%= @activity.description %></p></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xs-2 text-center">
+          <h1>AVEC</h1>
+        </div>
+        <div class="col-xs-8">
+          <div class="row">
+            <div class="col-xs-4">
+              <div id="user-image">
+                <%= image_tag "papy_marcel.jpg", {class: "avatar-square-huge"} %>
+              </div>
+            </div>
+            <div class="col-xs-8">
+              <div id="user-info">
+                <ul>
+                  <li><h1><%= @activity.user.name %> <%= @activity.user.surname %></h1></li>
+                  <% if @activity.user.birthdate %>
+                    <li><p><%= @activity.user.birthdate %></p></li>
+                  <% end %>
+                  <li><p><%= @activity.user.email %></p></li>
+                  <% if @activity.user.description %>
+                    <li><p><%= @activity.user.description %></p></li>
+                  <% end %>
+                  <% if @activity.user.address %>
+                    <li><p><%= @activity.user.address %></p></li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
