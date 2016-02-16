@@ -20,12 +20,12 @@
   2.times do
     Activity.create!(
       name: Faker::App.name,
-      starting_time: ,
-      end_time: ,
-      price: ,
-      pictogram_link: ,
-      description: ,
-      user_id:
+      starting_time: Faker::Date.forward(2).to_s,
+      end_time: (Faker::Date.forward(2) + 4).to_s,
+      price: Faker::Commerce.price.to_i,
+      pictogram_link: "#",
+      description: Faker::Lorem.paragraph(2, false),
+      user_id: user.id
     )
   end
 end
