@@ -3,12 +3,12 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-4">
-          <div>
+          <div class="user-image">
             <%= image_tag "papy_marcel.jpg", {class: "avatar-square-huge"} %>
           </div>
         </div>
         <div class="col-xs-8">
-          <div>
+          <div class="user-info">
             <ul>
               <li><h1><%= @user.name %> <%= @user.surname %></h1></li>
               <% if @user.birthdate %>
@@ -22,12 +22,25 @@
                 <li><p><%= @user.address %></p></li>
               <% end %>
             </ul>
-
+          </div>
+          <%= link_to "Modifier mon profil", edit_user_path(current_user), method: "get" %>
+          <%= link_to "Ajouter une activité", new_activity_path, method: "get" %>
+          <!-- Ajouter les liens vers la modification & la suppression des activités (dans la liste) -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="activity-info">
+            <h3>Mes activités:</h3>
+            <ul>
+              <% @user.activities.each do |activity| %>
+                <li><%= activity.name %>: du <%= activity.starting_time %> au <%= activity.end_time %> <%= link_to "Voir", activity_path(activity), method: "get" %> <%= link_to "Modifier", edit_activity_path(activity), method: "get" %> <%= link_to "Supprimer", activity_path(activity), method: "delete"  %></li>
+              <% end %>
+            </ul>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
 
