@@ -1,0 +1,10 @@
+<%= simple_form_for (@activity) do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :name %>
+  <%= f.input :starting_time, as: :string, input_html: { class: 'datepicker'} %>
+  <%= f.input :end_time, as: :string, input_html: { class: 'datepicker'} %>
+  <%= f.input :price %>
+  <%= f.input :description %>
+  <%= f.input :pictogram_link %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>
