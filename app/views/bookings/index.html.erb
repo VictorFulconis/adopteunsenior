@@ -2,5 +2,7 @@
 
 <h2> Below you can see all your bookings </h2>
 
-  <p> <%= @bookings.all  %> </p>
+  <% @bookings.each do |booking|  %>
+  <p><%= booking.activity.name %> </p>
+  <% end %>
 
