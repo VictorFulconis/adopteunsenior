@@ -1,0 +1,29 @@
+<div class="page-wrapper">
+  <div class="page-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-4">
+          <div>
+            <%= image_tag "profile.placeholder.jpeg", {class: "avatar-square-huge"} %>
+          </div>
+        </div>
+        <div class="col-xs-8">
+          <div>
+            <ul>
+              <li><h1><%= @user.name %> <%= @user.surname %></h1></li>
+              <% if @user.birthdate %>
+                <li><p><%= @user.birthdate %></p></li>
+              <% end %>
+              <li><p><%= @user.email %></p></li>
+              <% if @user.description %>
+                <li><p><%= @user.description %></p></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
