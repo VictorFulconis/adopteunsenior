@@ -1,19 +1,23 @@
 <h2>Edit user</h2>
 
-<%= simple_form_for(@user) do |f| %>
-  <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :name, placeholder: "John", required: false %>
-    <%= f.input :surname, autocomplete: "off", placeholder: "Do", required: false %>
-    <%= f.input :birthdate, autocomplete: "off", placeholder: "1976-01-02", required: false %>
-    <%= f.input :address, placeholder: "Villa Gaudelet, 75011 Paris", required: false %>
-    <%= f.input :description, autocomplete: "off", placeholder: "I love playing bridge with my friends.", required: false %>
-    <%= f.input :photo_link, autocomplete: "off", placeholder: "Here is my picture !", required: false %>
+<div class="page-wrapper">
+  <div class="page-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= simple_form_for (@user) do |f| %>
+            <%= f.error_notification %>
+            <%= f.input :name, placeholder: "John", required: false %>
+            <%= f.input :surname, autocomplete: "off", placeholder: "Do", required: false %>
+            <%= f.input :birthdate, autocomplete: "off", placeholder: "1976-01-02", required: false %>
+            <%= f.input :address, placeholder: "Villa Gaudelet, 75011 Paris", required: false %>
+            <%= f.input :description, autocomplete: "off", placeholder: "I love playing bridge with my friends.", required: false %>
+            <%= f.input :photo_link, autocomplete: "off", placeholder: "Here is my picture !", required: false %>
+            <%= f.button :submit, class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
-<% end %>
-
+</div>
