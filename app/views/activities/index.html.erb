@@ -2,30 +2,30 @@
 
 <h1>Listing Activities</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @activities.each do |activity| %>
-      <tr>
-        <td><%= activity.user.name %></td>
-        <td><%= activity.user.address %></td>
-        <td><%= activity.user.description %></td>
-        <td><%= activity.price %></td>
-        <td><%= link_to 'Show', activity %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Activity', new_activity_path %>
+<div class="page-wrapper">
+  <div class="page-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-4">
+          <div>
+            <%= image_tag "profile.placeholder.jpeg", {class: "avatar-square-huge"} %>
+          </div>
+        </div>
+        <div class="col-xs-8">
+          <div>
+            <% @activities.each do |activity| %>
+              <ul>
+                <li><h1><%= activity.user.name %> <%= activity.user.surname %></h1></li>
+                <li><p><%= activity.user.address %></p></li>
+                <li><p><%= activity.user.description %></p></li>
+                <li><p><%= activity.price %></p></li>
+                <li><p><%= link_to 'Show', activity %></p></li>
+              </ul>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= link_to 'New Activity', new_activity_path %>
+  </div>
+</div>
