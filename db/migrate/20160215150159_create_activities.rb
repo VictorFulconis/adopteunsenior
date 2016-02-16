@@ -8,7 +8,6 @@ class CreateActivities < ActiveRecord::Migration
       t.integer :price
       t.string :pictogram_link
       t.text :description
-      t.references :user, index: true, foreign_key: true
 
       t.timestamps null: false
     end
