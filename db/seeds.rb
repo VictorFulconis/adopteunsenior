@@ -13,8 +13,5 @@
     surname: Faker::Name.last_name,
     email: Faker::Internet.email,
     password: "00000000",
-
-
-
-
     )
+end
