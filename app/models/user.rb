@@ -7,8 +7,8 @@ class User < ActiveRecord::Base
   has_many :activities, dependent: :destroy
   has_many :bookings, dependent: :destroy
 
-  validates :name, presence: true
-  validates :surname, presence: true
-  validates :birthdate, presence: true
+  # validates :name, presence: true
+  # validates :surname, presence: true
+  # validates :birthdate, presence: true
 
 end
