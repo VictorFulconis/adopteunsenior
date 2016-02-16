@@ -13,5 +13,7 @@
     surname: Faker::Name.last_name,
     email: Faker::Internet.email,
     password: "00000000",
+    birthdate: "24/01/1960",
+    description: Faker::Lorem.paragraph(2, false)
     )
 end
