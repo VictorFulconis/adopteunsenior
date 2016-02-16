@@ -54,6 +54,11 @@ ActiveRecord::Schema.define(version: 20160216114436) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "name"
+    t.string   "surname"
+    t.text     "description"
+    t.string   "photo_link"
+    t.string   "birthdate"
     t.string   "address"
   end
 
