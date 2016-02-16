@@ -33,11 +33,14 @@
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <img src="http://placehold.it/50x50" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+           <img src="http://placehold.it/50x50" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+           <li><%= link_to "Mon profil", user_path(:id)%></li>
             <li><a href="#">My Activities</a></li>
             <li><a href="#">My Bookings</a></li>
-            <li><a href="#">Log Out</a></li>
+           <li><%= link_to "Me déconnecter", destroy_user_session_path(:id)%></li>
+
+
           </ul>
         </div>
       </div>
