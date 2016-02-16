@@ -17,9 +17,14 @@ class UsersController < ApplicationController
     redirect_to users_path(@users)
   end
 
+  def update
+  @user.update(user_params)
+  redirect_to user_path(@user)
+  end
+
   private
   def user_params
-    params.require(:user).permit(:name, :address, :category, :reviews)
+    params.require(:user).permit(:name, :surname, :description, :photo_link, :birthdate)
   end
 
   def set_user
