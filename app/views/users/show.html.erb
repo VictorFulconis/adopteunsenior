@@ -18,6 +18,9 @@
               <% if @user.description %>
                 <li><p><%= @user.description %></p></li>
               <% end %>
+              <% if @user.address %>
+                <li><p><%= @user.address %></p></li>
+              <% end %>
             </ul>
           </div>
         </div>
