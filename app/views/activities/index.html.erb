@@ -1,41 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-
-<!-- <div class="page-wrapper">
-  <div class="page-container">
-    <h3>Résultat</h3>
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-4">
-          <div>
-            <%= image_tag "papy_marcel.jpeg", {class: "avatar-square-huge"} %>
-          </div>
-        </div>
-        <div class="col-xs-8">
-          <div>
-            <% @activities.each do |activity| %>
-              <ul>
-                <li><h1><%= activity.user.name %> <%= activity.user.surname %></h1></li>
-                <li><p><%= activity.user.address %></p></li>
-                <li><p><%= activity.user.description %></p></li>
-                <li><p><%= activity.price %></p></li>
-                <li><p><%= link_to 'Show', activity %></p></li>
-                <%= simple_form_for (@booking) do |f| %>
-                  <%= f.hidden_field :user_id, as: :integer, value: activity.user.id %>
-                  <%= f.hidden_field :accepted, as: :boolean, value: false %>
-                  <%= f.hidden_field :activity_id, as: :integer, value: activity.id %>
-
-                  <%= f.button :submit, value: "Book", class: "btn btn-primary" %>
-                <% end %>
-              </ul>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-    <%= link_to 'New Activity', new_activity_path %>
-  </div>
-</div> -->
+<%= render 'shared/notices' %>
 
 
 <div class="page-wrapper">
@@ -57,7 +20,7 @@
                       <%= f.hidden_field :user_id, as: :integer, value: activity.user.id %>
                       <%= f.hidden_field :accepted, as: :boolean, value: false %>
                       <%= f.hidden_field :activity_id, as: :integer, value: activity.id %>
-                      <%= f.button :submit, value: "Book", class: "btn btn-primary" %>
+                      <%= f.button :submit, value: "Réserver une activité", class: "btn btn-home" %>
                   <% end %>
                   </div>
                 </li>
