@@ -52,7 +52,7 @@
                     <h4> <%= activity.name %> avec <%= activity.user.name %> <%= activity.user.surname %> <%= image_tag "papy_marcel.jpeg", {class: "avatar-square-big"} %> </h4>
                     <p> <%= activity.description %></p>
                     <p>Adresse: <%= activity.user.address %> / Compensation: <%= activity.price %></p>
-                    <p><%= link_to 'Show', activity %></p>
+                    <p><%= link_to 'Show', activity_path(activity, {search: @search}) %></p>
                     <%= simple_form_for (@booking) do |f| %>
                       <%= f.hidden_field :user_id, as: :integer, value: activity.user.id %>
                       <%= f.hidden_field :accepted, as: :boolean, value: false %>
