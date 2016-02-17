@@ -20,6 +20,13 @@
                 <li><p><%= activity.user.description %></p></li>
                 <li><p><%= activity.price %></p></li>
                 <li><p><%= link_to 'Show', activity %></p></li>
+                <%= simple_form_for (@booking) do |f| %>
+                  <%= f.hidden_field :user_id, as: :integer, value: activity.user.id %>
+                  <%= f.hidden_field :accepted, as: :boolean, value: false %>
+                  <%= f.hidden_field :activity_id, as: :integer, value: activity.id %>
+
+                  <%= f.button :submit, value: "Book", class: "btn btn-primary" %>
+                <% end %>
               </ul>
             <% end %>
           </div>

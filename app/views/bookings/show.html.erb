@@ -1,0 +1,12 @@
+<ul>
+  <li><h3><%= @booking.user.name %> <%= @booking.user.surname %></h3></li>
+  <li><p><%= @booking.user.address %></p></li>
+  <li><p><%= @booking.activity.name %></p></li>
+  <li><p><%= @booking.activity.description %></p></li>
+  <li><p><%= @booking.activity.starting_time %></p></li>
+  <li><p><%= @booking.activity.end_time %></p></li>
+  <li><p><%= @booking.activity.price %></p></li>
+  <li><p><%= @booking.accepted %></p></li>
+</ul>
+
+<%= link_to 'See all bookings', bookings_path %>
