@@ -1,29 +1,23 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Bookings</h1>
-
 <div class="page-wrapper">
   <div class="page-container">
+  <h1 class="text-center">Mes rendez-vous</h1>
     <div class="container">
-      <div class="row">
-        <div class="col-xs-4">
-          <div>
-            <%= image_tag "profile.placeholder.jpeg", {class: "avatar-square-huge"} %>
+      <% @bookings.each do |booking| %>
+        <div class="row">
+          <div class="col-xs-8 col-xs-offset-2 ">
+            <div class="booking">
+              <%= image_tag "profile.placeholder.jpeg", {class: "booking-image"} %>
+              <div class='booking-body'>
+                <h3><%= booking.activity.name %></h3>
+                <p>Du <%= booking.activity.starting_time %> au <%= booking.activity.end_time %> </p>
+                <p>Avec: <%= booking.activity.user.name %></p>
+                <p></p>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="col-xs-8">
-          <div>
-                            <li><p> "nom de l'activité" du "Date 1" au "date 2" avec "Mr Machin"</p></li>
-
-            <% @bookings.each do |booking| %>
-              <ul>
-                 <li><p><%= booking.activity.name %> du <%= booking.activity.starting_time %> au <%= booking.activity.end_time %> avec <%= booking.user.name %></p></li>
-              </ul>
-            <% end %>
-          </div>
-        </div>
-      </div>
+      <% end %>
     </div>
-    <%= link_to 'See all activities', activities_path %>
   </div>
 </div>
+<%# link_to 'See all activities', activities_path %>

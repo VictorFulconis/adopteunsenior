@@ -32,6 +32,7 @@ activitiesrange = %w( Cuisine Informatique Conversation Echec)
   end
 end
 
+
 # 1.times do
 #   user = User.new(
 #     name: "Papy",
