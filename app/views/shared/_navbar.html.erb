@@ -17,39 +17,37 @@
       <a href="" class="navbar-wagon-item navbar-wagon-link">Recherche une activité</a>
 
       <!-- Text link -->
-      <a href="" class="navbar-wagon-item navbar-wagon-link">Contact</a>
-
+<!--       <a href="" class="navbar-wagon-item navbar-wagon-link">Contact</a>
+ -->
       <!-- Text link -->
-      <a href="" class="navbar-wagon-item navbar-wagon-link">L'équipe</a>
-
+<!--       <a href="" class="navbar-wagon-item navbar-wagon-link">L'équipe</a>
+ -->
        <!-- Notification link-->
-      <a href="" class="navbar-wagon-item navbar-wagon-link">
+<!--       <a href="" class="navbar-wagon-item navbar-wagon-link">
       <div class="badge-container">
       <i class="fa fa-envelope-o"></i>
         <div class="badge badge-blue">3</div>
       </div>
-      </a>
+      </a> -->
+
+      <!-- Button (call-to-action) -->
+      <a href="" class="navbar-wagon-item navbar-wagon-button btn">Rejoins une activité</a>
 
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-           <img src="http://placehold.it/50x50" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
-            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-           <li><%= link_to "Mon profil", user_path(current_user)%></li>
-            <li><%= link_to "Modifier mon profil", edit_user_path(current_user)%></li>
-
-            <li><a href="#">My Activities</a></li>
-            <li><a href="#">My Bookings</a></li>
-           <li><%= link_to "Me déconnecter", destroy_user_session_path%></li>
-
-
+          <img src="http://placehold.it/50x50" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li><%= link_to "Mon profil", user_path(current_user), method: "get" %></li>
+            <li><%= link_to "Modifier mon profil", edit_user_path(current_user), method: "get" %></li>
+            <li><%= link_to "Mes activités", user_path(current_user), method: "get" %></li>
+            <li><%= link_to "Mes rendez-vous", bookings_path, method: "get" %></li>
+            <li><%= link_to "Me déconnecter", destroy_user_session_path, method: "delete" %></li>
           </ul>
         </div>
       </div>
-
-      <!-- Button (call-to-action) -->
-      <a href="" class="navbar-wagon-item navbar-wagon-button btn">Rejoins une activité</a>
     </div>
+
 
     <!-- Dropdown appearing on mobile only -->
     <div class="navbar-wagon-item hidden-md hidden-lg">
@@ -79,17 +77,17 @@
     <div class="navbar-wagon-right hidden-xs hidden-sm">
 
 
-      <a href="" class="navbar-wagon-item navbar-wagon-link">Concept</a>
-
+<!--       <a href="" class="navbar-wagon-item navbar-wagon-link">Concept</a>
+ -->
     <!-- Text link -->
       <a href="" class="navbar-wagon-item navbar-wagon-link">Recherche une activité</a>
 
       <!-- Text link -->
-      <a href="" class="navbar-wagon-item navbar-wagon-link">Contact</a>
-
+<!--       <a href="" class="navbar-wagon-item navbar-wagon-link">Contact</a>
+ -->
       <!-- Text link -->
-      <a href="" class="navbar-wagon-item navbar-wagon-link">L'équipe</a>
-
+<!--       <a href="" class="navbar-wagon-item navbar-wagon-link">L'équipe</a>
+ -->
 
       <!-- Button (call-to-action) -->
       <%= link_to "Créer un compte", new_user_registration_path, {class: "navbar-wagon-item navbar-wagon-button btn"} %>
