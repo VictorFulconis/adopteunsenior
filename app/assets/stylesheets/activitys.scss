@@ -2,55 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-<<<<<<< HEAD:app/assets/stylesheets/activities.scss
+#flexouille {
+  display: flex;
+  justify-content: space-between;
+  height: 130px;
+}
+
 #link-box {
   display: flex;
-  justify-content: space-around;
-=======
-@import url("components/avatar.css");
-@import url("components/banner.css");
-@import url("components/footer.css");
-@import url("components/card.css");
-
-body {
-  margin: 0;
-  font-family: Open-sans, sans-serif;
-}
-h1, h2, h3 {
-  font-family: Raleway, Helvetica, sans-serif;
-}
-h2 {
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 30px;
-  margin-top: 0;
-}
-.padded {
-  padding: 100px 0;
-}
-.wrapper-grey {
-  background: #F4F4F4;
+  justify-content: flex-start;
+  width: 300px;
+  .btn {
+    margin-right: 10px;
+  }
 }
 
-img {
-    vertical-align: middle;
-}
-img {
-    border: 0;
-}
-
-.container {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.wrapper-grey {
-    background: #F4F4F4;
->>>>>>> master:app/assets/stylesheets/activitys.scss
+li {
+  list-style: none;
 }
