@@ -13,6 +13,7 @@ activitiesrange = %w( Cuisine Informatique Conversation Echec)
     name: Faker::Name.first_name,
     surname: Faker::Name.last_name,
     email: Faker::Internet.email,
+    address: "16 villa Gaudelet, 75011",
     password: "00000000",
     birthdate: "24/01/1960",
     description: Faker::Lorem.paragraph(2, false)
