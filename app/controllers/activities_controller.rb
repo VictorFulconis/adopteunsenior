@@ -1,10 +1,13 @@
 
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :edit, :destroy, :update]
+  skip_before_action :authenticate_user!, only: :index
 
   def index
-    @activities = Activity.all
-    @booking = Booking.new
+    if params[:search]
+      @activities = Activity.search(params[:search])
+      @booking = Booking.new
+    end
   end
 
   def show

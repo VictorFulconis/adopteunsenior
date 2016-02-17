@@ -1,4 +1,4 @@
-<h2>Edit user</h2>
+
 
 
 <div class="page-wrapper">
@@ -6,6 +6,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-8 col-xs-offset-2">
+          <h2 class="text-center">Modifie ton profil</h2>
           <%= simple_form_for (@user) do |f| %>
             <%= f.error_notification %>
             <%= f.input :name, placeholder: "John", required: false %>
