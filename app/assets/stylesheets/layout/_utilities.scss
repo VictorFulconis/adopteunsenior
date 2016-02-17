@@ -33,13 +33,24 @@
 
 }
 
+.fa {
+text-decoration: none;
+color: white;
+
+}
 .page-wrapper {
   margin: 20px;
   padding-bottom: 120px;
 
 }
 
+.search-bar {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px;
 
+
+}
 .user-details-overview_sidebar {
     float: left;
     padding: 0 15px;
