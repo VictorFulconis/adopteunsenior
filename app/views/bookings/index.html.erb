@@ -13,11 +13,11 @@
         </div>
         <div class="col-xs-8">
           <div>
+                            <li><p> "nom de l'activité" du "Date 1" au "date 2" avec "Mr Machin"</p></li>
+
             <% @bookings.each do |booking| %>
               <ul>
                  <li><p><%= booking.activity.name %> du <%= booking.activity.starting_time %> au <%= booking.activity.end_time %> avec <%= booking.user.name %></p></li>
-
-
               </ul>
             <% end %>
           </div>
