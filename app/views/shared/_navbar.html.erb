@@ -56,9 +56,11 @@
       <div class="dropdown">
         <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><a href="#">Some mobile link</a></li>
-          <li><a href="#">Other one</a></li>
-          <li><a href="#">Other one</a></li>
+          <li><%= link_to "Mon profil", user_path(current_user), method: "get" %></li>
+          <li><%= link_to "Modifier mon profil", edit_user_path(current_user), method: "get" %></li>
+          <li><%= link_to "Mes activités", user_path(current_user), method: "get" %></li>
+          <li><%= link_to "Mes rendez-vous", bookings_path, method: "get" %></li>
+          <li><%= link_to "Me déconnecter", destroy_user_session_path, method: "delete" %></li>
         </ul>
       </div>
     </div>
@@ -73,7 +75,9 @@
  <div class="navbar-wagon">
     <!-- Logo -->
 
-    <i class="fa fa-heartbeat"> Adopte un senior</i>
+       <%= link_to root_path do %>
+      <i class="fa fa-heartbeat"> Adopte un senior</i>
+    <% end %>
 
     <!-- Right Navigation -->
     <div class="navbar-wagon-right hidden-xs hidden-sm">
@@ -103,9 +107,8 @@
       <div class="dropdown">
         <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><a href="#">Some mobile link</a></li>
-          <li><a href="#">Other one</a></li>
-          <li><a href="#">Other one</a></li>
+          <li><%= link_to "Créer un compte", new_user_registration_path%></li>
+          <li><%= link_to "Connecte toi", new_user_session_path %></li>
         </ul>
       </div>
     </div>
