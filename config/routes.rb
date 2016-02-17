@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   resources :users, only: [:show, :edit, :update]
-  resources :bookings, only: [:new, :create, :index, :delete]
+  resources :bookings, only: [:show, :new, :create, :index, :delete]
   resources :activities
 
   # The priority is based upon order of creation: first created -> highest priority.

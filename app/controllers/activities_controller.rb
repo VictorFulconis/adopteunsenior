@@ -4,9 +4,11 @@ class ActivitiesController < ApplicationController
 
   def index
     @activities = Activity.all
+    @booking = Booking.new
   end
 
   def show
+    @booking = Booking.new
   end
 
   def new
