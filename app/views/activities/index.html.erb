@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Activities</h1>
 
-<div class="page-wrapper">
+<!-- <div class="page-wrapper">
   <div class="page-container">
+    <h3>Résultat</h3>
     <div class="container">
       <div class="row">
         <div class="col-xs-4">
           <div>
-            <%= image_tag "profile.placeholder.jpeg", {class: "avatar-square-huge"} %>
+            <%= image_tag "papy_marcel.jpeg", {class: "avatar-square-huge"} %>
           </div>
         </div>
         <div class="col-xs-8">
@@ -27,5 +27,32 @@
       </div>
     </div>
     <%= link_to 'New Activity', new_activity_path %>
+  </div>
+</div> -->
+
+
+<div class="page-wrapper">
+  <div class="page-container">
+    <h3>Résultats...</h3>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-8 coll-xs-offset-2">
+          <div>
+            <ol>
+              <% @activities.each do |activity| %>
+                <li>
+                  <div>
+                    <h4> <%= activity.name %> avec <%= activity.user.name %> <%= activity.user.surname %> <%= image_tag "papy_marcel.jpeg", {class: "avatar-square-big"} %> </h4>
+                    <p> <%= activity.description %></p>
+                    <p>Adresse: <%= activity.user.address %> / Compensation: <%= activity.price %></p>
+
+                  </div>
+                </li>
+              <% end %>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
