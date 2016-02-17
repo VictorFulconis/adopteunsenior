@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+activitiesrange = %w( Cuisine Informatique Conversation Echec)
 
 10.times do
   user = User.new(
@@ -19,7 +20,7 @@
   user.save!
   2.times do
     Activity.create!(
-      name: Faker::App.name,
+      name: activitiesrange[rand(0..3)],
       starting_time: Faker::Date.forward(2).to_s,
       end_time: (Faker::Date.forward(2) + 4).to_s,
       price: Faker::Commerce.price.to_i,
@@ -30,23 +31,23 @@
   end
 end
 
-1.times do
-  user = User.new(
-    name: "Papy",
-    surname: "Marcel",
-    email: "papy.marcel@jaimelesjeunes.fr",
-    password: "00000000",
-    birthdate: "24/01/1930",
-    description: "Jovial et accueillant, je pratique ma passion avec assiduité!"
-  )
-  user.save!
-  Activity.create!(
-    name: "Branlette",
-    starting_time: "20/02/2016",
-    end_time: "24/02/2016",
-    price: 12,
-    pictogram_link: "#",
-    description: "Sportif et détendant, un plaisir de tous les jours",
-    user_id: user.id
-  )
-end
+# 1.times do
+#   user = User.new(
+#     name: "Papy",
+#     surname: "Marcel",
+#     email: "papy.marcel@jaimelesjeunes.fr",
+#     password: "00000000",
+#     birthdate: "24/01/1930",
+#     description: "Jovial et accueillant, je pratique ma passion avec assiduité!"
+#   )
+#   user.save!
+#   Activity.create!(
+#     name: "Branlette",
+#     starting_time: "20/02/2016",
+#     end_time: "24/02/2016",
+#     price: 12,
+#     pictogram_link: "#",
+#     description: "Sportif et détendant, un plaisir de tous les jours",
+#     user_id: user.id
+#   )
+# end
