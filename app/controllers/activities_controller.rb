@@ -29,12 +29,13 @@ class ActivitiesController < ApplicationController
     if @activity.update(activity_params)
       redirect_to activity_path(@activity.id), method: "get"
     else
-      render edit
+      render :edit
     end
   end
 
   def destroy
     @activity.delete
+    redirect_to user_path(current_user)
   end
 
   private

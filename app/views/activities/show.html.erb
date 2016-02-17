@@ -43,6 +43,14 @@
           </div>
         </div>
       </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="activity-show-links">
+            <%= link_to "Toutes mes activités", user_path(current_user), method: "get" %> <%= link_to "Modifier", edit_activity_path(@activity), method: "get" %> <%= link_to "Supprimer", activity_path(@activity), method: "delete"  %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
