@@ -2,8 +2,15 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = current_user.bookings
+    @my_activities = current_user.activities
+    @my_bookings = []
+    @my_activities.each do |my_activity|
+      bookings = my_activity.bookings
+      bookings.each do
+        @my_bookings << bookings
+      end
+    end
   end
-
 
   def new
     @booking = Booking.new
