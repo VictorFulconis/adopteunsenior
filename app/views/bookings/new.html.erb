@@ -1,0 +1,20 @@
+<div class="page-wrapper">
+  <div class="page-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <%= simple_form_for (@booking) do |f| %>
+            <%= f.error_notification %>
+            <%= f.input :user_id, as: :integer, value: :user_id %>
+            <%= f.hidden_field :accepted, as: :boolean, value: :false %>
+            <%= f.input :activity_id, as: :integer, value: :activity_id %>
+
+            <%= f.button :submit, class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

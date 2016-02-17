@@ -6,10 +6,12 @@ class ActivitiesController < ApplicationController
   def index
     if params[:search]
       @activities = Activity.search(params[:search])
+      @booking = Booking.new
     end
   end
 
   def show
+    @booking = Booking.new
   end
 
   def new

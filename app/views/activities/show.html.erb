@@ -46,7 +46,13 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="activity-show-links">
-            <%= link_to "Toutes mes activités", user_path(current_user), method: "get" %> <%= link_to "Modifier", edit_activity_path(@activity), method: "get" %> <%= link_to "Supprimer", activity_path(@activity), method: "delete"  %>
+                <%= simple_form_for (@booking) do |f| %>
+                  <%= f.hidden_field :user_id, as: :integer, value: @activity.user.id %>
+                  <%= f.hidden_field :accepted, as: :boolean, value: false %>
+                  <%= f.hidden_field :activity_id, as: :integer, value: @activity.id %>
+
+                  <%= f.button :submit, value: "Book", class: "btn btn-primary" %>
+                <% end %>
           </div>
         </div>
       </div>
