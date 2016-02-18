@@ -7,9 +7,7 @@ class Activity < ActiveRecord::Base
   validates :price, presence: true
 
   def self.search(query)
-    where(name: query[:name])
+    where("name = ? AND starting_time >= ? AND end_time <= ?", query[:name], query[:starting_time], query[:end_time])
   end
 end
 
-
-# && where(:starting_time >= query[:starting_time]) && where(:end_time <= query[:end_time])
