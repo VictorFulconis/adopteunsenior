@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update]
   resources :bookings, only: [:show, :new, :create, :index, :delete]
   resources :activities
-
+  mount Attachinary::Engine => "/attachinary"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

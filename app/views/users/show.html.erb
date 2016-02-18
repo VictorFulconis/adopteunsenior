@@ -4,7 +4,9 @@
       <div class="row">
         <div class="col-xs-4">
           <div class="user-picture-div">
-            <%= image_tag "papy_marcel.jpg", {class: "avatar-picture"} %>
+            <% if @user.photo? %>
+              <%= cl_image_tag @user.photo.path, width: 200, height: 300, crop: :fill %>
+            <% end %>
           </div>
         </div>
         <div class="col-xs-8">
@@ -21,6 +23,7 @@
               <% if @user.address %>
                 <li class="no-bullet"><p><%= @user.address %></p></li>
               <% end %>
+
             </ul>
           </div>
           <%= link_to "Modifier mon profil", edit_user_path(current_user), method: "get" %>
