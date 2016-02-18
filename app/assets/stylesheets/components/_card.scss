@@ -2,12 +2,14 @@
 
 .card {
     height: 250px;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.6);
     background-size: cover !important;
-    background-color: #BDC3C7;
+    background-color: white;
     position: relative;
     border-radius: 5px;
     margin-bottom: 20px;
+    opacity: 70%;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22);
+    border-radius: 6px;
 }
 
 .card-link {
@@ -28,6 +30,9 @@
 
 .card-user {
     position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
     right: 10px;
     top: 10px;
 }

@@ -5,11 +5,12 @@
 <div class="container text-center">
   <div class="row">
     <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2);">
+      <div class="card">
         <div class="card-category"><%= @activity.price %>€</div>
           <div class="card-description">
             <h2><%= @activity.name %></h2>
             <p><%= @activity.description %></p>
+            <p>Du <%= @activity.starting_time %> au </p>
           </div>
 <!--         <p class="card-user avatar"> src="user.jpg" </p>
  -->        <a class="card-link" href="#" ></a>
@@ -23,8 +24,10 @@
           <div class="card-description">
             <h2>Some stuff</h2>
             <p>Very cool stuff, useful and smart</p>
+            <p><%= @activity.end_time %></p>
           </div>
-        <img class="card-user avatar" src="user.jpg">
+        <img class="card-user"<%= image_tag "papy_marcel.jpg" %>
+>
         <a class="card-link" href="#" ></a>
       </div>
     </div>
