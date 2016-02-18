@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {registrations: "registrations"}
   root to: "pages#home"
   resources :users, only: [:show, :edit, :update]
-  resources :bookings, only: [:show, :new, :create, :index, :delete]
+  resources :bookings, only: [:show, :new, :create, :index, :delete, :update]
   resources :activities
   mount Attachinary::Engine => "/attachinary"
 
