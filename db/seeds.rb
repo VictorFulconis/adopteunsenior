@@ -8,7 +8,7 @@
 
 # AUTOMATIC UGLY VERSION
 
-# activitiesrange = %w( Cuisine Informatique Conversation Echec)
+# activitiesrange = %w( Cuisine Informatique Conversation Lecture)
 
 # 10.times do
 #   user = User.new(
