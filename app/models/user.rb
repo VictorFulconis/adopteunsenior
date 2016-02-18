@@ -12,4 +12,6 @@ class User < ActiveRecord::Base
   # validates :surname, presence: true
   # validates :birthdate, presence: true
 
+  has_attachment :photo
+
 end
