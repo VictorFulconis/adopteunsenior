@@ -2,15 +2,15 @@
   <div class="page-container">
   <h1 class="text-center title">Détails de l'activité</h1>
 
-<div class="container text-center">
+<div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-4">
+    <div class="col-xs-12 col-sm-5">
       <div class="card">
-        <div class="card-category"><%= @activity.price %>€</div>
-          <div class="card-description">
-            <h2><%= @activity.name %></h2>
-            <p><%= @activity.description %></p>
-            <p>Du <%= @activity.starting_time %> au </p>
+          <div>
+            <h2 class="text-center"><%= @activity.name %></h2>
+            <p><strong>Demande : </strong><%= @activity.description %></p>
+            <p><strong>Date :</strong> Du <%= @activity.starting_time %> au <%= @activity.end_time %></p>
+            <p><strong>Rémunération :</strong> <%= @activity.price %>€</p>
           </div>
 <!--         <p class="card-user avatar"> src="user.jpg" </p>
  -->        <a class="card-link" href="#" ></a>
@@ -18,17 +18,38 @@
     </div>
 
 
-    <div class="col-xs-12 col-sm-8">
+    <div class="col-xs-12 col-sm-7">
       <div class="card">
-        <div class="card-category">Popular</div>
-          <div class="card-description">
-            <h2>Some stuff</h2>
-            <p>Very cool stuff, useful and smart</p>
-            <p><%= @activity.end_time %></p>
+        <div class="col-xs-8 col-sm-8" >
+          <div>
+            <h2>Avec: <%= @activity.user.name %> <%= @activity.user.surname %></h1>
+            <% if @activity.user.birthdate %>
+              <p><strong>Date de naissance :</strong> <%= @activity.user.birthdate %></p>
+            <% end %>
+            <p><strong>Email : </strong><%= @activity.user.email %></p>
+            <% if @activity.user.description %>
+              <p><strong>Description :</strong> <%= @activity.user.description %></p>
+            <% end %>
+            <% if @activity.user.address %>
+              <p><strong>Adresse :</strong> <%= @activity.user.address %></p>
+            <% end %>
           </div>
-        <img class="card-user"<%= image_tag "papy_marcel.jpg" %>
->
-        <a class="card-link" href="#" ></a>
+        </div>
+        <div class="col-xs-4 col-sm-4">
+          <% if @activity.user.photo? %>
+            <%= cl_image_tag @activity.user.photo, width: 200, height: 200, crop: :fill %>
+          <% else %>
+            <%= image_tag "placeholder-user-photo.png"%>
+          <% end %>
+                <%= simple_form_for (@booking) do |f| %>
+                  <%= f.hidden_field :user_id, as: :integer, value: @activity.user.id %>
+                  <%= f.hidden_field :accepted, as: :boolean, value: false %>
+                  <%= f.hidden_field :activity_id, as: :integer, value: @activity.id %>
+
+                  <%= f.button :submit, value: "Réserver", class: "btn btn-primary" %>
+                <% end %>
+          </div>
+        </div>
       </div>
     </div>
 </div>
@@ -54,10 +75,17 @@
           <div id="activity-info">
             <ul>
               <li><h3><%= @activity.name %></h3></li>
-              <li><p><%= @activity.starting_time %></p></li>
-              <li><p><%= @activity.end_time %></p></li>
-              <li><p><%= @activity.price %>€</p></li>
-              <li><p><%= @activity.description %></p></li>
+                 <li><h1><%= @activity.user.name %> <%= @activity.user.surname %></h1></li>
+                  <% if @activity.user.birthdate %>
+                    <li><p><%= @activity.user.birthdate %></p></li>
+                  <% end %>
+                  <li><p><%= @activity.user.email %></p></li>
+                  <% if @activity.user.description %>
+                    <li><p><%= @activity.user.description %></p></li>
+                  <% end %>
+                  <% if @activity.user.address %>
+                    <li><p><%= @activity.user.address %></p></li>
+                  <% end %>
             </ul>
           </div>
         </div>
