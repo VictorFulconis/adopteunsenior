@@ -1,38 +1,44 @@
 <div class="page-wrapper">
   <div class="page-container">
-    <h3>Résultats...</h3>
+  <h1 class="text-center title">Activités disponibles</h1>
     <div class="container">
-      <div class="row">
-        <div class="col-xs-8 col-xs-offset-2">
-          <div>
-            <ul>
-              <% @activities.each do |activity| %>
-                <li>
-                  <div class="search-card">
-                    <div id="flexouille">
-                      <div id="text-box">
-                        <h4> <%= activity.name %> avec <%= activity.user.name %> <%= activity.user.surname %> </h4>
-                        <p> <%= activity.description %></p>
-                        <p>Adresse: <%= activity.user.address %> / Compensation: <%= activity.price %>€</p>
-                      </div>
-                      <%= image_tag "papy_marcel.jpeg", {class: "avatar-square-big"} %>
-                    </div>
-                    <div id="link-box">
-                      <p><%= link_to 'Show', activity, class: "btn btn-primary" %></p>
+      <% @activities.each do |activity| %>
+        <div class="row">
+          <div class="col-xs-8 col-xs-offset-2 ">
+            <div class="booking">
+                <%= image_tag "papy_marcel.jpeg", {class: "booking-image"} %>
+              <div class='booking-body'>
+                  <h3> <%= activity.name %> avec <%= activity.user.name %> <%= activity.user.surname %> </h3>
+                  <p> <%= activity.description %></p>
+                  <p><strong>Adresse:</strong> <%= activity.user.address %></p>
+                  <p><strong>Compensation:</strong> <%= activity.price %>€</p>
+                <div id="link-box-button">
+
                       <%= simple_form_for (@booking) do |f| %>
                         <%= f.hidden_field :user_id, as: :integer, value: activity.user.id %>
                         <%= f.hidden_field :accepted, as: :boolean, value: false %>
                         <%= f.hidden_field :activity_id, as: :integer, value: activity.id %>
-                        <%= f.button :submit, value: "Book", class: "btn btn-danger" %>
+                        <%= f.button :submit, value: "Réserver", class: "btn btn-home", id:"activity-button" %>
                       <% end %>
-                    </div>
-                  </div>
-                </li>
-              <% end %>
-            </ul>
+                      <p><%= link_to 'Détails', activity, class: "btn btn-medium", id:"activity-button" %></p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
