@@ -26,8 +26,9 @@
 
             </ul>
           </div>
+          <% if @user === current_user %>
           <%= link_to "Modifier mon profil", edit_user_path(current_user), method: "get" %>
-          <%= link_to "Ajouter une activité", new_activity_path, method: "get" %>
+          <% end %>
           <!-- Ajouter les liens vers la modification & la suppression des activités (dans la liste) -->
         </div>
       </div>
@@ -37,9 +38,15 @@
             <h3>Mes activités:</h3>
             <ul>
               <% @user.activities.each do |activity| %>
-                <li><%= activity.name %>: du <%= activity.starting_time %> au <%= activity.end_time %> <%= link_to "Voir", activity_path(activity), method: "get" %> <%= link_to "Modifier", edit_activity_path(activity), method: "get" %> <%= link_to "Supprimer", activity_path(activity), method: "delete"  %></li>
+                <li><%= activity.name %>: du <%= activity.starting_time %> au <%= activity.end_time %> <%= link_to "Voir", activity_path(activity), method: "get" %>
+                  <% if @user === current_user %>
+                    <%= link_to "Modifier", edit_activity_path(activity), method: "get" %>
+                    <%= link_to "Supprimer", activity_path(activity), method: "delete"  %>
+                  <% end %>
+                </li>
               <% end %>
             </ul>
+            <%= link_to "Ajouter une activité", new_activity_path, method: "get" %>
           </div>
         </div>
       </div>
