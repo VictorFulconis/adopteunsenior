@@ -2,15 +2,67 @@
   <div class="page-container">
   <h1 class="text-center">Mes rendez-vous</h1>
     <div class="container">
+      <% @my_bookings.each do |my_booking| %>
+        <div class="row">
+          <div class="col-xs-8 col-xs-offset-2 ">
+            <div class="booking">
+              <% if my_booking.user.photo? %>
+                <%= cl_image_tag my_booking.user.photo.path, width: 200, height: 300, crop: :fill %>
+              <% end %>
+              <div class='booking-body'>
+                <div>
+                  <h3><%= my_booking.activity.name %></h3>
+                  <p>Du <%= my_booking.activity.starting_time %> au <%= my_booking.activity.end_time %> </p>
+                  <p><strong>Vous serez aidé par:</strong> <%= my_booking.user.name %></p>
+                </div>
+                <div id="acceptance">
+                  <% if my_booking.accepted.nil? %>
+                    <%= simple_form_for (my_booking) do |f| %>
+                      <%= f.hidden_field :accepted, as: :boolean, value: true %>
+                      <%= f.button :submit, value: "Accepter", class: "btn btn-success"%>
+                    <% end %>
+                    <%= simple_form_for (my_booking) do |f| %>
+                      <%= f.hidden_field :accepted, as: :boolean, value: false %>
+                      <%= f.button :submit, value: "Refuser", class: "btn btn-danger"%>
+                    <% end %>
+                  <% end %>
+                </div>
+                <div>
+                  <% if my_booking.accepted.nil? %>
+                    <h4>En attente</h4>
+                  <% elsif my_booking.accepted %>
+                    <h4>Accepté</h4>
+                  <% else %>
+                    <h4>Refusé</h4>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
       <% @bookings.each do |booking| %>
         <div class="row">
           <div class="col-xs-8 col-xs-offset-2 ">
             <div class="booking">
-              <%= image_tag "profile.placeholder.jpeg", {class: "booking-image"} %>
+              <% if booking.activity.user.photo? %>
+                <%= cl_image_tag booking.activity.user.photo.path, width: 200, height: 300, crop: :fill %>
+              <% end %>
               <div class='booking-body'>
-                <h3><%= booking.activity.name %></h3>
-                <p>Du <%= booking.activity.starting_time %> au <%= booking.activity.end_time %> </p>
-                <p>Avec: <%= booking.activity.user.name %></p>
+                <div>
+                  <h3><%= booking.activity.name %></h3>
+                  <p>Du <%= booking.activity.starting_time %> au <%= booking.activity.end_time %> </p>
+                  <p><strong>Vous irez aider:</strong> <%= booking.activity.user.name %></p>
+                </div>
+                <div>
+                  <% if booking.accepted.nil? %>
+                    <h4>En attente</h4>
+                  <% elsif booking.accepted %>
+                    <h4>Accepté</h4>
+                  <% else %>
+                    <h4>Refusé</h4>
+                  <% end %>
+                </div>
               </div>
             </div>
           </div>
