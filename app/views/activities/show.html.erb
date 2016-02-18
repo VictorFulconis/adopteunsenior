@@ -8,7 +8,15 @@
       <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2);">
         <div class="card-category"><%= @activity.price %>€</div>
           <div class="card-description">
-            <h2><%= @activity.name %></h2>
+            <% if @activity.name === "Cuisine" %>
+              <h2><i class="fa fa-cutlery"></i> <%= @activity.name %></h2>
+            <% elsif @activity.name === "Informatique" %>
+              <h2><i class="fa fa-laptop"></i> <%= @activity.name %></h2>
+            <% elsif @activity.name === "Conversation" %>
+              <h2><i class="fa fa-commenting-o"></i> <%= @activity.name %></h2>
+            <% else %>
+              <h2><i class="fa fa-book"></i> <%= @activity.name %></h2>
+            <% end %>
             <p><%= @activity.description %></p>
           </div>
 <!--         <p class="card-user avatar"> src="user.jpg" </p>
