@@ -6,8 +6,8 @@
         <div class="row">
           <div class="col-xs-8 col-xs-offset-2 ">
             <div class="booking">
-              <% if @user.photo? %>
-                <%= cl_image_tag @user.photo.path, width: 200, height: 300, crop: :fill %>
+              <% if activity.user.photo? %>
+                <%= cl_image_tag activity.user.photo.path, width: 200, height: 300, crop: :fill %>
               <% end %>
               <div class='booking-body'>
                 <h3> <%= activity.name %> avec <%= activity.user.name %> <%= activity.user.surname %> </h3>
@@ -53,6 +53,7 @@
                     </div>
                     <div id="link-box">
                       <p><%= link_to 'Show', activity_path(activity, {search: @search}), class: "btn btn-primary" %></p>
+                      <% end %>
 >>>>>>> master -->
 
 
