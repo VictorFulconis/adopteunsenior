@@ -48,16 +48,16 @@
 @user.save!
 Activity.create!(
   name: "Cuisine",
-  starting_time: "18/02/2016",
-  end_time: "27/02/2016",
+  starting_time: "18/02/2016".to_date,
+  end_time: "27/02/2016".to_date,
   price: 23,
   description: "J'ai besoin d'aide pour cuire beaucoup de nouilles!",
   user_id: @user.id
 )
 Activity.create!(
   name: "Conversation",
-  starting_time: "20/02/2016",
-  end_time: "27/02/2016",
+  starting_time: "20/02/2016".to_date,
+  end_time: "27/02/2016".to_date,
   price: 12,
   description: "Je vais bien te faire chier!",
   user_id: @user.id
@@ -76,7 +76,7 @@ Activity.create!(
 Activity.create!(
   name: "Conversation",
   starting_time: "18/02/2016",
-  end_time: "27/02/2016",
+  end_time: "27/02/2016".to_date,
   price: 23,
   description: "Je t'aurai oublié demain!",
   user_id: @user.id
@@ -94,8 +94,8 @@ Activity.create!(
 @user.save!
 Activity.create!(
   name: "Conversation",
-  starting_time: "19/02/2016",
-  end_time: "29/02/2016",
+  starting_time: "19/02/2016".to_date,
+  end_time: "29/02/2016".to_date,
   price: 59,
   description: "Venez parler de chats avec moi jusqu'à 18h",
   user_id: @user.id
@@ -113,8 +113,8 @@ Activity.create!(
 @user.save!
 Activity.create!(
   name: "Cuisine",
-  starting_time: "20/02/2016",
-  end_time: "20/02/2016",
+  starting_time: "20/02/2016".to_date,
+  end_time: "20/02/2016".to_date,
   price: 5,
   description: "Participation de 5€ pour un déjeuner du feu de dieu",
   user_id: @user.id
@@ -132,16 +132,16 @@ Activity.create!(
 @user.save!
 Activity.create!(
   name: "Informatique",
-  starting_time: "18/02/2016",
-  end_time: "29/02/2016",
+  starting_time: "18/02/2016".to_date,
+  end_time: "29/02/2016".to_date,
   price: 30,
   description: "I don't understand anything about computers. Help ...",
   user_id: @user.id
 )
 Activity.create!(
   name: "Lecture",
-  starting_time: "20/02/2016",
-  end_time: "02/03/2016",
+  starting_time: "20/02/2016".to_date,
+  end_time: "02/03/2016".to_date,
   price: 50,
   description: "Hardcore chess player",
   user_id: @user.id
@@ -160,8 +160,8 @@ Activity.create!(
 @user.save!
 Activity.create!(
   name: "Informatique",
-  starting_time: "19/02/2016",
-  end_time: "27/02/2016",
+  starting_time: "19/02/2016".to_date,
+  end_time: "27/02/2016".to_date,
   price: 12,
   description: "Je ne sais pas me servir d'un PC!",
   user_id: @user.id
