@@ -17,7 +17,9 @@
 
     <!-- Text link -->
     <%# link_to "Recherche une activité", root_path, class: "btn btn-home" %>
-   <%= link_to "Mes rendez-vous", bookings_path, method: "get", class: "btn btn-home" %>
+       <%= link_to "Demander de l'aide",  new_activity_path, method: "get", class: "btn btn-home", id:"btn-navbar" %>
+
+   <%= link_to "Mes rendez-vous", bookings_path, method: "get", class: "btn btn-home", id:"btn-navbar" %>
 
       <!-- Text link -->
 <!--       <a href="" class="navbar-wagon-item navbar-wagon-link">Contact</a>
@@ -39,6 +41,7 @@
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
+
           <img src="http://placehold.it/50x50" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li><%= link_to "Mon profil", user_path(current_user), method: "get" %></li>
