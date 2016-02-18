@@ -14,7 +14,7 @@
             <%= f.input :birthdate, autocomplete: "off", placeholder: "1976-01-02", required: false %>
             <%= f.input :address, placeholder: "Villa Gaudelet, 75011 Paris", required: false %>
             <%= f.input :description, autocomplete: "off", placeholder: "I love playing bridge with my friends.", required: false %>
-            <%= f.input :photo_link, autocomplete: "off", placeholder: "Here is my picture !", required: false %>
+            <%= f.input :photo, as: :attachinary , placeholder: "Here is my picture !", required: false %>
             <%= f.button :submit, class: "btn btn-primary" %>
           <% end %>
         </div>

@@ -6,7 +6,12 @@ class ActivitiesController < ApplicationController
   def index
     if params[:search]
       @search = params[:search]
-      @activities = Activity.search(params[:search])
+      @users = User.near(params[:search][:address], 20)
+      @users_id = []
+      @users.each do |user|
+        @users_id << user.id
+      end
+      @activities = Activity.search(params[:search]).where(user_id: @users_id)
       @booking = Booking.new
     end
   end
@@ -23,7 +28,7 @@ class ActivitiesController < ApplicationController
   def create
     @activity = current_user.activities.new(activity_params)
     if @activity.save
-      redirect_to activity_path(@activity), method: "get"
+      redirect_to user_path(current_user), method: "get"
     else
       render :new
     end
