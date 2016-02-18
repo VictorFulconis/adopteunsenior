@@ -23,7 +23,7 @@ class ActivitiesController < ApplicationController
   def create
     @activity = current_user.activities.new(activity_params)
     if @activity.save
-      redirect_to activity_path(@activity), method: "get"
+      redirect_to user_path(current_user), method: "get"
     else
       render :new
     end

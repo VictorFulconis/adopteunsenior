@@ -16,9 +16,10 @@
                         <p>Adresse: <%= activity.user.address %> / Compensation: <%= activity.price %>€</p>
                       </div>
                       <%= image_tag "papy_marcel.jpeg", {class: "avatar-square-big"} %>
+
                     </div>
                     <div id="link-box">
-                      <p><%= link_to 'Show', activity, class: "btn btn-primary" %></p>
+                      <p><%= link_to 'Show', activity_path(activity, {search: @search}), class: "btn btn-primary" %></p>
                       <%= simple_form_for (@booking) do |f| %>
                         <%= f.hidden_field :user_id, as: :integer, value: activity.user.id %>
                         <%= f.hidden_field :accepted, as: :boolean, value: false %>
