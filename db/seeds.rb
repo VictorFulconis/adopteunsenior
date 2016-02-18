@@ -8,7 +8,7 @@
 
 # AUTOMATIC UGLY VERSION
 
-# activitiesrange = %w( Cuisine Informatique Conversation Echec)
+# activitiesrange = %w( Cuisine Informatique Conversation Lecture)
 
 # 10.times do
 #   user = User.new(
@@ -43,7 +43,6 @@
   name: "Marcel",
   surname: "Georges",
   description: "J'aime manger des nouilles",
-  photo_link: "",
   birthdate: "1930-01-12",
   address: "Villa Gaudelet, Paris"
 )
@@ -53,7 +52,6 @@ Activity.create!(
   starting_time: "18/02/2016",
   end_time: "27/02/2016",
   price: 23,
-  pictogram_link: "",
   description: "J'ai besoin d'aide pour cuire beaucoup de nouilles!",
   user_id: @user.id
 )
@@ -62,7 +60,6 @@ Activity.create!(
   starting_time: "20/02/2016",
   end_time: "27/02/2016",
   price: 12,
-  pictogram_link: "",
   description: "Je vais bien te faire chier!",
   user_id: @user.id
 )
@@ -73,7 +70,6 @@ Activity.create!(
   name: "Basile",
   surname: "Toutoublie",
   description: "Love meeting new friends :)",
-  photo_link: "",
   birthdate: "1933-06-15",
   address: "Paris"
 )
@@ -83,7 +79,6 @@ Activity.create!(
   starting_time: "18/02/2016",
   end_time: "27/02/2016",
   price: 23,
-  pictogram_link: "",
   description: "Je t'aurai oublié demain!",
   user_id: @user.id
 )
@@ -94,7 +89,6 @@ Activity.create!(
   name: "Lucette",
   surname: "Jeanine",
   description: "J'aime faire de longues siestes  entourés de mes 15 chats",
-  photo_link: "",
   birthdate: "1945-06-56",
   address: "Rue du fond du pré"
 )
@@ -104,7 +98,6 @@ Activity.create!(
   starting_time: "19/02/2016",
   end_time: "29/02/2016",
   price: 59,
-  pictogram_link: "",
   description: "Venez parler de chats avec moi jusqu'à 18h",
   user_id: @user.id
 )
@@ -115,7 +108,6 @@ Activity.create!(
   name: "Jeannine",
   surname: "Super",
   description: "J'adore faire la cuisine",
-  photo_link: "",
   birthdate: "1938-03-14",
   address: "Maison de retraite les vielles sont cool"
 )
@@ -125,7 +117,6 @@ Activity.create!(
   starting_time: "20/02/2016",
   end_time: "20/02/2016",
   price: 5,
-  pictogram_link: "",
   description: "Participation de 5€ pour un déjeuner du feu de dieu",
   user_id: @user.id
 )
@@ -136,7 +127,6 @@ Activity.create!(
   name: "Albert",
   surname: "Einstein",
   description: "Let's do some maths together !",
-  photo_link: "",
   birthdate: "1922-08-29",
   address: "Krakow"
 )
@@ -146,16 +136,14 @@ Activity.create!(
   starting_time: "18/02/2016",
   end_time: "29/02/2016",
   price: 30,
-  pictogram_link: "",
   description: "I don't understand anything about computers. Help ...",
   user_id: @user.id
 )
 Activity.create!(
-  name: "Echec",
+  name: "Lecture",
   starting_time: "20/02/2016",
   end_time: "02/03/2016",
   price: 50,
-  pictogram_link: "",
   description: "Hardcore chess player",
   user_id: @user.id
 )
@@ -176,7 +164,6 @@ Activity.create!(
   starting_time: "19/02/2016",
   end_time: "27/02/2016",
   price: 12,
-  pictogram_link: "",
   description: "Je ne sais pas me servir d'un PC!",
   user_id: @user.id
 )
