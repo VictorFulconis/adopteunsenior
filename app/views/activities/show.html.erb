@@ -93,7 +93,7 @@
           <div class="activity-show-links">
                 <%= simple_form_for (@booking) do |f| %>
                   <%= f.hidden_field :user_id, as: :integer, value: @activity.user.id %>
-                  <%= f.hidden_field :accepted, as: :boolean, value: false %>
+                  <%= f.hidden_field :accepted, as: :boolean, value: nil %>
                   <%= f.hidden_field :activity_id, as: :integer, value: @activity.id %>
 
                   <%= f.button :submit, value: "Book", class: "btn btn-primary" %>

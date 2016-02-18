@@ -3,14 +3,8 @@ class BookingsController < ApplicationController
   def index
     @bookings = current_user.bookings
     @my_activities = current_user.activities
-    @my_bookings = []
-    @my_activities.each do |my_activity|
-      bookings = my_activity.bookings
-      bookings.each do
-        @my_bookings << bookings
-      end
-    end
-  end
+    @my_bookings = Booking.joins(:activity).where("activities.user_id = ?", current_user.id)
+ end
 
   def new
     @booking = Booking.new
@@ -30,10 +24,10 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
-  def is_booking_accepted?
-    if @booking.accepted == true
-      redirect_to booking_path(@booking)
-    end
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+    redirect_to :bookings_path
   end
 
   def destroy
@@ -43,6 +37,7 @@ class BookingsController < ApplicationController
   end
 
   private
+
   def booking_params
     params.require(:booking).permit(:user_id, :activity_id, :accepted)
   end
