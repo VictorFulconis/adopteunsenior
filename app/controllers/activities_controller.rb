@@ -4,6 +4,7 @@ class ActivitiesController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
+    @booking = Booking.new
     if params[:search]
       @search = params[:search]
       @users = User.near(params[:search][:address], 20)
@@ -12,7 +13,8 @@ class ActivitiesController < ApplicationController
         @users_id << user.id
       end
       @activities = Activity.search(params[:search]).where(user_id: @users_id)
-      @booking = Booking.new
+    else
+      @activities = Activity.all
     end
   end
 
