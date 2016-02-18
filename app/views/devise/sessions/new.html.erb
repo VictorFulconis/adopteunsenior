@@ -9,10 +9,10 @@
             <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <%= f.error_notification %>
             <%= f.input :email, required: false, autofocus: true %>
-            <%= f.input :password, required: false %>
+            <%= f.input :password, label: "Mot de passe", required: false %>
              <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
             <div class="div-centered">
-            <%= f.button :submit, "Connecte toi", class: "btn btn-treehouse" %>
+                        <%= f.button :submit, "Connexion", class: "btn btn-treehouse" %>
             </div>
           <% end %>
         </div>
