@@ -5,6 +5,17 @@
  * ------------------------------------- */
 
 // Paddings
+.fa-commenting-o:before {
+color: #292C2F;
+
+}
+
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 .padded {
   padding-top: 5em;
   padding-bottom: 5em;
@@ -48,7 +59,6 @@ color: white;
     display: inline-block;
     vertical-align: middle;
     margin: 10px;
-
 
 }
 .user-details-overview_sidebar {
