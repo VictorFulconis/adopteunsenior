@@ -1,7 +1,7 @@
 <div class="search-bar">
 <div class="form-inline">
 <%= simple_form_for :search, url: activities_path, method: 'get' do |f| %>
-  <%= f.input :name, collection: ["Cuisine", "Informatique", "Conversation", "Echec"], prompt: "Choisir une activité", label: false%>
+  <%= f.input :name, collection: ["Cuisine", "Informatique", "Conversation", "Lecture"], prompt: "Choisir une activité", label: false%>
   <%= f.input :starting_time, as: :string, placeholder: 'Date de début',input_html: { class: 'datepicker'}, label: false %>
   <%= f.input :end_time, as: :string, placeholder: 'Date de fin', input_html: { class: 'datepicker'}, label: false %>
   <%= f.input :address, placeholder: 'Entrer une adresse', label: false %>
