@@ -28,8 +28,11 @@ li {
 //   background: white;
 // }
 
-.photo img {
+.photo {
+  margin-top: 30px;
+  img {
   border-radius: 50%;
+  }
 }
 
 
@@ -37,6 +40,28 @@ li {
   color: black;
 }
 
+.card-container {
+  .card {
+  width: 80%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  }
+  #activity_button {
+    margin-top: 50px;
+    width: 150px;
+    font-weight: bold;
+  }
+}
+
 .table_activity {
-  vertical-align: top;
+  margin-top: 25px;
+  td {
+  vertical-align: center;
+  height: 50px;
+  width: 300px;
+  border-bottom: 1px solid #ddd;
+  }
+  .head {
+    width: 150px;
+  }
 }
