@@ -7,12 +7,12 @@
       <div class="card">
        <div class="col-xs-4 col-sm-4 ">
           <% if @activity.user.photo? %>
-              <%= cl_image_tag activity.user.photo.path, class: "user_picture_activity", crop: :fill %>          <% else %>
+              <%= cl_image_tag @activity.user.photo.path, class: "user_picture_activity", crop: :fill %>          <% else %>
             <%= image_tag "placeholder-user-photo.png", class: "user_picture_activity"%>
           <% end %>
                 <%= simple_form_for (@booking) do |f| %>
                   <%= f.hidden_field :user_id, as: :integer, value: @activity.user.id %>
-                  <%= f.hidden_field :accepted, as: :boolean, value: false %>
+                  <%= f.hidden_field :accepted, as: :boolean, value: nil %>
                   <%= f.hidden_field :activity_id, as: :integer, value: @activity.id %>
 
                   <%= f.button :submit, value: "Réserver", class: "btn btn-home", id: "activity_button" %>
