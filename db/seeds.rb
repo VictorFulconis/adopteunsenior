@@ -27,7 +27,6 @@
 #       starting_time: Faker::Date.forward(2).to_s,
 #       end_time: (Faker::Date.forward(2) + 4).to_s,
 #       price: Faker::Commerce.price.to_i,
-#       pictogram_link: "#",
 #       description: Faker::Lorem.paragraph(2, false),
 #       user_id: user.id
 #     )
@@ -43,26 +42,23 @@
   name: "Marcel",
   surname: "Georges",
   description: "J'aime manger des nouilles",
-  photo_link: "",
   birthdate: "1930-01-12",
   address: "Villa Gaudelet, Paris"
 )
 @user.save!
 Activity.create!(
   name: "Cuisine",
-  starting_time: "18/02/2016",
-  end_time: "27/02/2016",
+  starting_time: "18/02/2016".to_date,
+  end_time: "27/02/2016".to_date,
   price: 23,
-  pictogram_link: "",
   description: "J'ai besoin d'aide pour cuire beaucoup de nouilles!",
   user_id: @user.id
 )
 Activity.create!(
   name: "Conversation",
-  starting_time: "20/02/2016",
-  end_time: "27/02/2016",
+  starting_time: "20/02/2016".to_date,
+  end_time: "27/02/2016".to_date,
   price: 12,
-  pictogram_link: "",
   description: "Je vais bien te faire chier!",
   user_id: @user.id
 )
@@ -73,7 +69,6 @@ Activity.create!(
   name: "Basile",
   surname: "Toutoublie",
   description: "Love meeting new friends :)",
-  photo_link: "",
   birthdate: "1933-06-15",
   address: "Paris"
 )
@@ -81,9 +76,8 @@ Activity.create!(
 Activity.create!(
   name: "Conversation",
   starting_time: "18/02/2016",
-  end_time: "27/02/2016",
+  end_time: "27/02/2016".to_date,
   price: 23,
-  pictogram_link: "",
   description: "Je t'aurai oublié demain!",
   user_id: @user.id
 )
@@ -94,17 +88,15 @@ Activity.create!(
   name: "Lucette",
   surname: "Jeanine",
   description: "J'aime faire de longues siestes  entourés de mes 15 chats",
-  photo_link: "",
   birthdate: "1945-06-56",
   address: "Rue du fond du pré"
 )
 @user.save!
 Activity.create!(
   name: "Conversation",
-  starting_time: "19/02/2016",
-  end_time: "29/02/2016",
+  starting_time: "19/02/2016".to_date,
+  end_time: "29/02/2016".to_date,
   price: 59,
-  pictogram_link: "",
   description: "Venez parler de chats avec moi jusqu'à 18h",
   user_id: @user.id
 )
@@ -115,17 +107,15 @@ Activity.create!(
   name: "Jeannine",
   surname: "Super",
   description: "J'adore faire la cuisine",
-  photo_link: "",
   birthdate: "1938-03-14",
   address: "Maison de retraite les vielles sont cool"
 )
 @user.save!
 Activity.create!(
   name: "Cuisine",
-  starting_time: "20/02/2016",
-  end_time: "20/02/2016",
+  starting_time: "20/02/2016".to_date,
+  end_time: "20/02/2016".to_date,
   price: 5,
-  pictogram_link: "",
   description: "Participation de 5€ pour un déjeuner du feu de dieu",
   user_id: @user.id
 )
@@ -136,26 +126,23 @@ Activity.create!(
   name: "Albert",
   surname: "Einstein",
   description: "Let's do some maths together !",
-  photo_link: "",
   birthdate: "1922-08-29",
   address: "Krakow"
 )
 @user.save!
 Activity.create!(
   name: "Informatique",
-  starting_time: "18/02/2016",
-  end_time: "29/02/2016",
+  starting_time: "18/02/2016".to_date,
+  end_time: "29/02/2016".to_date,
   price: 30,
-  pictogram_link: "",
   description: "I don't understand anything about computers. Help ...",
   user_id: @user.id
 )
 Activity.create!(
-  name: "Echec",
-  starting_time: "20/02/2016",
-  end_time: "02/03/2016",
+  name: "Lecture",
+  starting_time: "20/02/2016".to_date,
+  end_time: "02/03/2016".to_date,
   price: 50,
-  pictogram_link: "",
   description: "Hardcore chess player",
   user_id: @user.id
 )
@@ -173,10 +160,9 @@ Activity.create!(
 @user.save!
 Activity.create!(
   name: "Informatique",
-  starting_time: "19/02/2016",
-  end_time: "27/02/2016",
+  starting_time: "19/02/2016".to_date,
+  end_time: "27/02/2016".to_date,
   price: 12,
-  pictogram_link: "",
   description: "Je ne sais pas me servir d'un PC!",
   user_id: @user.id
 )

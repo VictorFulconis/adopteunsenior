@@ -7,12 +7,16 @@ class ActivitiesController < ApplicationController
     @booking = Booking.new
     if params[:search]
       @search = params[:search]
-      @users = User.near(params[:search][:address], 20)
-      @users_id = []
-      @users.each do |user|
-        @users_id << user.id
+      if params[:search][:address] != ""
+        @users = User.near(params[:search][:address], 20)
+        @users_id = []
+        @users.each do |user|
+          @users_id << user.id
+        end
+        @activities = Activity.search(params[:search]).where(user_id: @users_id)
+      else
+        @activities = Activity.search(params[:search])
       end
-      @activities = Activity.search(params[:search]).where(user_id: @users_id)
     else
       @activities = Activity.all
     end
