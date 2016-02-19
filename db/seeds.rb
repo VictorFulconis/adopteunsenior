@@ -70,7 +70,7 @@ Activity.create!(
   surname: "Toutoublie",
   description: "Love meeting new friends :)",
   birthdate: "1933-06-15",
-  address: "Paris"
+  address: "Avenue de la république, paris"
 )
 @user.save!
 Activity.create!(
@@ -89,7 +89,7 @@ Activity.create!(
   surname: "Jeanine",
   description: "J'aime faire de longues siestes  entourés de mes 15 chats",
   birthdate: "1945-06-56",
-  address: "Rue du fond du pré"
+  address: "Diamond Street, New-york"
 )
 @user.save!
 Activity.create!(
@@ -108,7 +108,7 @@ Activity.create!(
   surname: "Super",
   description: "J'adore faire la cuisine",
   birthdate: "1938-03-14",
-  address: "Maison de retraite les vielles sont cool"
+  address: "Rue Oberkampf, Paris"
 )
 @user.save!
 Activity.create!(
@@ -155,7 +155,7 @@ Activity.create!(
   description: "J'ai un prénom de jeune!",
   photo_link: nil,
   birthdate: "1940-03-26",
-  address: "Loin d'ici"
+  address: "Boulevard Raspail, paris"
 )
 @user.save!
 Activity.create!(
