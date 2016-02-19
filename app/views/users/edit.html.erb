@@ -3,9 +3,9 @@
 
 <div class="page-wrapper">
   <div class="page-container">
-    <div class="container">
+    <div class="container form">
       <div class="row">
-        <div class="col-xs-8 col-xs-offset-2">
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3">
           <h2 class="text-center">Compléte ton profil</h2>
           <%= simple_form_for (@user) do |f| %>
             <%= f.error_notification %>
@@ -15,10 +15,13 @@
             <%= f.input :address, placeholder: "Villa Gaudelet, 75011 Paris",label: "Adresse", required: false %>
             <%= f.input :description, autocomplete: "off", placeholder: "J'adore jouer au bridge avec mes amis.",label: "Passions", required: false %>
             <%= f.input :photo, as: :attachinary , placeholder: "Here is my picture !", required: false %>
-            <%= f.button :submit, class: "btn btn-primary" %>
+            <%= f.button :submit, class: "btn btn-primary", style: "width: 100%", value: "Enregistrer les modifications" %>
           <% end %>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
+
