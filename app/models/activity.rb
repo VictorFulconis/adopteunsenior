@@ -12,17 +12,17 @@ class Activity < ActiveRecord::Base
     elsif query[:starting_time] == "" && query[:end_time] == ""
       where("name = ?", query[:name])
     elsif query[:name] == "" && query[:end_time] == ""
-      where("starting_time >= ?", query[:starting_time].to_date)
+      where("starting_time <= ?", query[:starting_time].to_date)
     elsif query[:name] == "" && query[:starting_time] == ""
-      where("end_time <= ?", query[:end_time].to_date)
+      where("end_time >= ?", query[:end_time].to_date)
     elsif query[:end_time] == ""
-      where("name = ? AND starting_time >= ?", query[:name], query[:starting_time].to_date)
+      where("name = ? AND starting_time <= ?", query[:name], query[:starting_time].to_date)
     elsif query[:name] == ""
-      where("starting_time >= ? AND end_time <= ?", query[:starting_time].to_date, query[:end_time].to_date)
+      where("starting_time <= ? AND end_time >= ?", query[:starting_time].to_date, query[:end_time].to_date)
     elsif query[:starting_time] == ""
-      where("name = ? AND end_time <= ?", query[:name], query[:end_time].to_date)
+      where("name = ? AND end_time >= ?", query[:name], query[:end_time].to_date)
     else
-      where("name = ? AND starting_time >= ? AND end_time <= ?", query[:name], query[:starting_time].to_date, query[:end_time].to_date)
+      where("name = ? AND starting_time <= ? AND end_time >= ?", query[:name], query[:starting_time].to_date, query[:end_time].to_date)
     end
   end
 end
