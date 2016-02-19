@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
     @bookings = current_user.bookings
     @my_activities = current_user.activities
     @my_bookings = Booking.joins(:activity).where("activities.user_id = ?", current_user.id)
+    # raise
  end
 
   def new

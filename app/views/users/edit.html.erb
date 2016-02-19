@@ -6,14 +6,14 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-8 col-xs-offset-2">
-          <h2 class="text-center">Modifie ton profil</h2>
+          <h2 class="text-center">Compléte ton profil</h2>
           <%= simple_form_for (@user) do |f| %>
             <%= f.error_notification %>
-            <%= f.input :name, placeholder: "John", required: false %>
-            <%= f.input :surname, autocomplete: "off", placeholder: "Do", required: false %>
-            <%= f.input :birthdate, autocomplete: "off", placeholder: "1976-01-02", required: false %>
-            <%= f.input :address, placeholder: "Villa Gaudelet, 75011 Paris", required: false %>
-            <%= f.input :description, autocomplete: "off", placeholder: "I love playing bridge with my friends.", required: false %>
+            <%= f.input :name, placeholder: "Michel", label: "Prénom", required: false %>
+            <%= f.input :surname, autocomplete: "off", placeholder: "Dupont", label: "Nom", required: false %>
+            <%= f.input :birthdate, autocomplete: "off", placeholder: "1976-01-02", label: "Date de naissance", required: false %>
+            <%= f.input :address, placeholder: "Villa Gaudelet, 75011 Paris",label: "Adresse", required: false %>
+            <%= f.input :description, autocomplete: "off", placeholder: "J'adore jouer au bridge avec mes amis.",label: "Passions", required: false %>
             <%= f.input :photo, as: :attachinary , placeholder: "Here is my picture !", required: false %>
             <%= f.button :submit, class: "btn btn-primary" %>
           <% end %>

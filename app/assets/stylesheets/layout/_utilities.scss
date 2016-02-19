@@ -5,6 +5,13 @@
  * ------------------------------------- */
 
 // Paddings
+
+a {
+  color: black;
+}
+a:hover {
+  text-decoration: none;
+}
 .fa-commenting-o:before {
 color: #292C2F;
 
@@ -84,7 +91,7 @@ color: white;
 }
 
 .title {
-  margin-bottom: 2em;
+  margin-bottom: 20px;
 
 
 }
