@@ -40,9 +40,11 @@
                       <% end %>
                     </tbody>
                   </table>
+              <div class="text-center">
               <% if @user === current_user %>
               <%= link_to "Modifier mon profil", edit_user_path(current_user), method: "get", class: "btn btn-home btn-center" %>
               <% end %>
+              </div>
             </div>
           </div>
         </div>
@@ -84,7 +86,7 @@
           </div>
         </div>
         <div class="text-center">
-            <%= link_to "Ajouter une activité", new_activity_path, method: "get", class: "btn btn-home" %>
+            <%= link_to "Ajouter une activité", new_activity_path, method: "get", class: "btn btn-home", id:"button-profile" %>
         </div>
       </div>
     </div>
