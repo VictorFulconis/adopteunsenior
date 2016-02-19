@@ -6,7 +6,6 @@
         <% @my_bookings.each do |my_booking| %>
 
           <div class="col-xs-8 col-xs-offset-2 ">
-             <%= link_to activity_path(my_booking.activity.id) do %>
             <div class="booking">
               <% if my_booking.user.photo? %>
                 <%= cl_image_tag my_booking.user.photo.path, width: 200, height: 200, crop: :fill, class: "booking-index-image" %>
@@ -15,7 +14,9 @@
               <% end %>
               <div class='booking-body'>
                 <div>
-                  <h3><%= my_booking.activity.name %></h3>
+                  <%= link_to activity_path(my_booking.activity.id) do %>
+                    <h3><%= my_booking.activity.name %></h3>
+                  <% end %>
                   <p>Du <%= my_booking.activity.starting_time %> au <%= my_booking.activity.end_time %> </p>
                   <p><strong>Vous serez aidé par:</strong> <%= my_booking.user.name %></p>
                 </div>
@@ -42,7 +43,6 @@
                 </div>
               </div>
             </div>
-            <% end %>
           </div>
         <% end %>
       </div>
