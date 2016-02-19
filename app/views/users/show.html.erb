@@ -1,7 +1,6 @@
 <div class="page-wrapper">
   <div class="page-container page-container-responsive row-space-top-4 row-space-8r">
     <div class="container">
-
       <div class="row">
         <div class="col-xs-4">
           <div class="user-div">
@@ -23,8 +22,8 @@
                       <% end %>
                       <% if @user.birthdate %>
                             <tr>
-                              <td class="field-name"><p><strong>Anniversaire: </strong></p></td>
-                              <td><p><%= @user.birthdate %></p></td>
+                              <td class="field-name"><p><strong>Age: </strong></p></td>
+                              <td><p><%= Date.today.year - @user.birthdate.to_i %></p></td>
                             </tr>
                       <% end %>
                       <% if @user.address %>
@@ -42,7 +41,7 @@
                     </tbody>
                   </table>
               <% if @user === current_user %>
-              <%= link_to "Modifier mon profil", edit_user_path(current_user), method: "get", class: "btn btn-primary" %>
+              <%= link_to "Modifier mon profil", edit_user_path(current_user), method: "get", class: "btn btn-home btn-center" %>
               <% end %>
             </div>
           </div>
@@ -52,51 +51,43 @@
           <div class="activity-div">
             <h1><%= "Bonjour, je m'appelle #{@user.name} !" %></h1>
             <h3>J'ai besoin d'aide pour</h3>
-            <ul>
-              <% @user.activities.each do |activity| %>
-                <li>
-                  <% if activity.name === "Cuisine" %>
-                    <p><i class="fa fa-cutlery"> </i> <%= activity.name %>
-                    <%= link_to "Voir", activity_path(activity), method: "get", class: "btn btn-default Un" %>
-                    <% if @user === current_user %>
-                      <%= link_to "Modifier", edit_activity_path(activity), method: "get", class: "btn btn-default" %>
-                      <%= link_to "Supprimer", activity_path(activity), method: "delete", class: "btn btn-default"  %>
-                    <% end %>
-                    </p>
-                  <% elsif activity.name === "Informatique" %>
-                    <p><i class="fa fa-laptop"> </i> <%= activity.name %>
-                    <%= link_to "Voir", activity_path(activity), method: "get", class: "btn btn-default Un" %>
-                    <% if @user === current_user %>
-                      <%= link_to "Modifier", edit_activity_path(activity), method: "get", class: "btn btn-default" %>
-                      <%= link_to "Supprimer", activity_path(activity), method: "delete", class: "btn btn-default"  %>
-                    <% end %>
-                    </p>
-                  <% elsif activity.name === "Conversation" %>
-                    <p><i class="fa fa-commenting-o"> </i> <%= activity.name %>
-                    <%= link_to "Voir", activity_path(activity), method: "get", class: "btn btn-default Un" %>
-                    <% if @user === current_user %>
-                      <%= link_to "Modifier", edit_activity_path(activity), method: "get", class: "btn btn-default" %>
-                      <%= link_to "Supprimer", activity_path(activity), method: "delete", class: "btn btn-default"  %>
-                    <% end %>
-                    </p>
-                  <% else %>
-                    <p><i class="fa fa-book"> </i> <%= activity.name %>
-                    <%= link_to "Voir", activity_path(activity), method: "get", class: "btn btn-default Un" %>
-                    <% if @user === current_user %>
-                      <%= link_to "Modifier", edit_activity_path(activity), method: "get", class: "btn btn-default" %>
-                      <%= link_to "Supprimer", activity_path(activity), method: "delete", class: "btn btn-default"  %>
-                    <% end %>
-                    </p>
+              <table>
+                <body>
+                  <% @user.activities.each do |activity| %>
+                    <tr>
+                      <td>
+                        <% if activity.name === "Cuisine" %>
+                          <p><i class="fa fa-cutlery"> </i> <%= activity.name %></p>
+                        <% elsif activity.name === "Informatique" %>
+                          <p><i class="fa fa-laptop"> </i> <%= activity.name %></p>
+                        <% elsif activity.name === "Conversation" %>
+                          <p><i class="fa fa-commenting-o"> </i> <%= activity.name %></p>
+                        <% else %>
+                          <p><i class="fa fa-book"> </i> <%= activity.name %></p>
+                        <% end %>
+                      </td>
+                      <td>
+                        <%= link_to "Voir", activity_path(activity), method: "get", class: "btn btn-default Un" %>
+                      </td>
+                      <% if @user === current_user %>
+                        <td>
+                          <%= link_to "Modifier", edit_activity_path(activity), method: "get", class: "btn btn-default" %>
+                        </td>
+                        <td>
+                          <%= link_to "Supprimer", activity_path(activity), method: "delete", class: "btn btn-default"  %>
+                        </td>
+                      <% end %>
+                    </tr>
                   <% end %>
-                </li>
-              <% end %>
-            </ul>
-
-            <%= link_to "Ajouter une activité", new_activity_path, method: "get", class: "btn btn-primary" %>
+                </body>
+              </table>
           </div>
+        </div>
+        <div class="text-center">
+            <%= link_to "Ajouter une activité", new_activity_path, method: "get", class: "btn btn-home" %>
         </div>
       </div>
     </div>
   </div>
 </div>
-
+</div>
