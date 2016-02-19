@@ -5,13 +5,13 @@
         <div class="col-xs-12 col-sm-6 col-sm-offset-3">
           <%= simple_form_for (@activity) do |f| %>
             <%= f.error_notification %>
-            <h1 class="text-center"><%= "Détails de la mission" %></h1>
+            <h1 class="text-center form-ro"><%= "Détails de la mission" %></h1>
             <%= f.input :name, collection: ["Cuisine", "Informatique", "Conversation", "Lecture"], label: "Nom" %>
             <%= f.input :starting_time, as: :string, input_html: { class: 'datepicker'}, label: "Date de démarrage" %>
             <%= f.input :end_time, as: :string, input_html: { class: 'datepicker'}, label: "Date de fin" %>
             <%= f.input :price, label: "Rémunération" %>
             <%= f.input :description, label: "Description" %>
-            <%= f.button :submit, class: "btn btn-primary", class: "btn btn-primary", style: "width: 100%", value: "Créer une activité" %>
+            <%= f.button :submit, class: "btn btn-home", style: "width: 100%", value: "Créer une activité" %>
           <% end %>
         </div>
       </div>
