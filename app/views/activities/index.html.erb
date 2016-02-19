@@ -5,16 +5,36 @@
       <% @activities.each do |activity| %>
         <div class="row">
           <div class="col-xs-8 col-xs-offset-2 ">
-            <div class="booking">
-              <% if activity.user.photo? %>
-                <%= cl_image_tag activity.user.photo.path, width: 200, height: 300, crop: :fill %>
-              <% end %>
-              <div class='booking-body'>
-                <h3> <%= activity.name %> avec <%= activity.user.name %> <%= activity.user.surname %> </h3>
-                <p> <%= activity.description %></p>
-                <p><strong>Adresse:</strong> <%= activity.user.address %></p>
-                <p><strong>Compensation:</strong> <%= activity.price %>€</p>
-                <div id="link-box-button">
+          <div class="row">
+            <div class="booking" >
+              <div class='text-center booking-body col-xs-2 col-xs-offset-1 '>
+                <div>
+                  <h3>
+                   <% if activity.name === "Cuisine" %>
+                    <h3 class="text-center"><i class="fa fa-cutlery"></i> <%= activity.name %></h3>
+                  <% elsif activity.name === "Informatique" %>
+                    <h3 class="text-center"><i class="fa fa-laptop"></i> <%= activity.name %></h3>
+                  <% elsif activity.name === "Conversation" %>
+                    <h3 class="text-center"><i class="fa fa-commenting-o"></i> <%= activity.name %></h3>
+                  <% else %>
+                    <h3 class="text-center"><i class="fa fa-book"></i> <%= activity.name %></h3>
+                  <% end %>
+                  </h3>
+                  <p><%= activity.user.address %></p>
+                  <p><strong><%= activity.price %>€</strong></p>
+                </div>
+                <div class="photo col-xs-2 col-xs-offset-1 ">
+                  <% if activity.user.photo?%>
+                    <%= cl_image_tag activity.user.photo.path, width: 100, height: 100, crop: :fill %>
+                  <% else %>
+                    <%= image_tag "papy_marcel.jpg", width: 100, height: 100, crop: :fill %>
+                  <% end %>
+                  <p class="text-center"><%= activity.user.name %></p>
+                </div>
+                <div class="col-xs-2 col-xs-offset-1 " >
+                  <p> <%= activity.description %></p>
+                </div>
+                <div id="link-box-button" class="col-xs-2 col-xs-offset-1 ">
                   <%= simple_form_for (@booking) do |f| %>
                     <%= f.hidden_field :user_id, as: :integer, value: activity.user.id %>
                     <%= f.hidden_field :accepted, as: :boolean, value: nil %>
@@ -23,11 +43,15 @@
                   <% end %>
                   <p><%= link_to 'Détails', activity_path(activity, {search: @search}), class: "btn btn-medium", id:"activity-button" %></p>
                 </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       <% end %>
+    </div>
+    <div class="text-center">
+      <%= link_to 'Effectuer une autre recherche', pages_home_path, class: "btn btn-danger", id:"btn-center" %>
     </div>
   </div>
 </div>

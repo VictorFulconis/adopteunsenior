@@ -20,3 +20,23 @@
 li {
   list-style: none;
 }
+
+// .photo {
+//   border-radius: 50px;
+//   border: 1px solid rgba(0, 0, 0, 0.1);
+//   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+//   background: white;
+// }
+
+.photo img {
+  border-radius: 50%;
+}
+
+
+.fa {
+  color: black;
+}
+
+.table_activity {
+  vertical-align: top;
+}
